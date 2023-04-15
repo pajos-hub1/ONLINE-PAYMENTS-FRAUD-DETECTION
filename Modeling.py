@@ -1,6 +1,10 @@
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import seaborn as sns
+import matplotlib.pyplot as plt
+from matplotlib import style
+style.use('ggplot')
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
@@ -8,7 +12,9 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import RandomForestClassifier
 from xgboost import XGBClassifier
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
+from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay, accuracy_score, precision_score, recall_score, f1_score, classification_report
+import warnings
+warnings.filterwarnings('ignore')
 df = pd.read_csv('fraud_detection.csv')
 df.head()
 # Now, let’s have a look at whether this dataset has any null values or not
